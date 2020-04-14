@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 	<head>
 		<title>COVID-19 infections Estimato</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+		<meta name="Description" content="Covid-19 Estimator">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=10.0, user-scalable=yes">
 		<!--<link rel="stylesheet" href="style/jquery-ui.min.css" type="text/css" media="screen" /> -->
-		<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/blitzer/jquery-ui.css">
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-		<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+		<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/blitzer/jquery-ui.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 		
 		<style>
 			body, table, input{font-family: Arial, Geneva, Helvetica, sans-serif; font-size: 12px; text-align:center}
@@ -71,39 +72,45 @@
 				<fieldset>
 					<table class="content">
 						<tr>
-							<td>Population:</td>
-							<td><input type="number" name="population" data-population /></td>
-						</tr>
-						<tr><td colspan="2" class="more-margin"><hr class="inner"></td></tr>
-						<tr>
-							<td>Time to elapse:</td>
-							<td><input type="number" name="timeToElapse" data-time-to-elapse /></td>
-						</tr>
-						<tr><td colspan="2" class="more-margin"><hr class="inner"></td></tr>
-						<tr>
-							<td>Reported cases:</td>
-							<td><input type="number" name="reportedCases" data-reported-cases /></td>
-						</tr>
-						<tr><td colspan="2" class="more-margin"><hr class="inner"></td></tr>
-						<tr>
-							<td>Total hospital beds:</td>
-							<td><input type="number" name="totalHospitalBeds" data-total-hospital-beds /></td>
-						</tr>
-						<tr><td colspan="2" class="more-margin"><hr class="inner"></td></tr>
-						<tr>
-							<td>Period type:</td>
 							<td>
-								<select name="periodType" id="periodType" data-period-type>
+								<label for="population">Population:
+								<input type="number" name="population" data-population role="population" /> </label>
+							</td>
+						</tr>
+						<tr><td colspan="2" class="more-margin"><hr class="inner"></td></tr>
+						<tr>
+							<td>
+								<label for="timeToElapse">Time to elapse:
+								<input type="number" name="timeToElapse" data-time-to-elapse role="timeToElapse" /></label></td>
+						</tr>
+						<tr><td colspan="2" class="more-margin"><hr class="inner"></td></tr>
+						<tr>
+							<td>
+								<label for="reportedCases">Reported cases:
+								<input type="number" name="reportedCases" data-reported-cases role="reportedCases" /></label></td>
+						</tr>
+						<tr><td colspan="2" class="more-margin"><hr class="inner"></td></tr>
+						<tr>
+							<td>
+								<label for="totalHospitalBeds">Total hospital beds:
+								<input type="number" name="totalHospitalBeds" data-total-hospital-beds role="totalHospitalBeds" /></label></td>
+						</tr>
+						<tr><td colspan="2" class="more-margin"><hr class="inner"></td></tr>
+						<tr>
+							<td>
+								<label for="periodType">Period type:
+								<select name="periodType" id="periodType" data-period-type role="periodType">
 									<option value="days">Days</option>
 									<option value="weeks">Weeks</option>
 									<option value="months">Months</option>
 								</select>
+								</label>
 							</td>
 						</tr>
 						<tr><td colspan="2" class="more-margin"><hr class="inner"></td></tr>
 						<tr>
 							<td colspan="2" class="center-align">
-								<input type="submit" name="update" id="submit" value="Submit" data-goestimate/>
+								<button  name="update" id="submit" data-goestimate>Submit</button>
 							</td>
 						</tr>
 					</table>
