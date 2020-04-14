@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>COVID-19 infections Estimato</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+		<!--<link rel="stylesheet" href="style/jquery-ui.min.css" type="text/css" media="screen" /> -->
+		<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/blitzer/jquery-ui.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+		
+		<style>
+			body, table, input{font-family: Arial, Geneva, Helvetica, sans-serif; font-size: 12px; text-align:center}
+			table {text-align: left;}
+			table.content{width: 100%; margin: 0 auto;}
+			div.holder{width: 400px; margin: 0 auto;}
+			div.holder td:first-of-type{text-align: right; padding-right: 20px}
+			div.holder td.center-align{text-align:center; padding: 10px 0}
+			div.holder td.more-margin{padding: 2px 0 2px}
+			fieldset {border: #ccc 1px solid; border-radius: 6px; padding:10px;margin-bottom:10px;}
+			input[type="text"],input[type="number"], textarea {
+				border: 1px solid #D6D6D6;
+				-moz-border-radius: 3px;
+				-webkit-border-radius: 3px;
+				border-radius: 3px;
+				-moz-box-shadow: inset 0 1px 4px rgba(0,0,0,.2);
+				-webkit-box-shadow: inset 0 1px 4px rgba(0, 0, 0, .2);
+				box-shadow: inset 0 1px 4px rgba(0, 0, 0, .2);
+				box-shadow: inset 0 2em 3em -3em rgba(0, 0, 0, .2);
+				line-height: 15px;
+				margin: 5px 0;
+				padding: 0.3em;
+			}
+			input[type="text"],input[type="number"]{width: 141.056px; line-height: 20px;}
+			.dateelem{cursor:pointer;}
+			select{width: 150px;}
+			hr{
+				border: 0;
+				height: 0;
+				border-top: 1px solid rgba(0, 0, 0, 0.1);
+				border-bottom: 1px solid rgba(255, 255, 255, 0.3); 
+			}
+			hr.inner{
+				border-top: 1px dashed rgba(0, 0, 0, 0.1);
+				border-bottom: 1px dashed rgba(255, 255, 255, 0.3);
+			}
+			.bordered,table.bordered td,table.bordered th,table.workload ,.workload td, .workload th {
+				border-collapse: collapse;
+				border-style: solid;
+				border-width: 1px;
+				border-color: #999;
+
+			}
+			@media only screen and (max-width: 850px) {
+			  div.holder, input[type="text"],input[type="number"], select {width:100%;}
+			}
+		</style>
+		
+		<script>
+			$(document).ready(function() {
+				$("input[type=submit], a, button" ).button();
+				// Type selectmenu
+				$("#periodType").selectmenu();
+			});
+		</script>
+	</head>
+	<body onload="window.scrollTo(0, 1);">
+		<form name="statForm" action="" method="post">
+			<div class="holder">
+				<h2>COVID-19 infections Estimator</h2>
+				<fieldset>
+					<table class="content">
+						<tr>
+							<td>Population:</td>
+							<td><input type="number" name="population" data-population /></td>
+						</tr>
+						<tr><td colspan="2" class="more-margin"><hr class="inner"></td></tr>
+						<tr>
+							<td>Time to elapse:</td>
+							<td><input type="number" name="timeToElapse" data-time-to-elapse /></td>
+						</tr>
+						<tr><td colspan="2" class="more-margin"><hr class="inner"></td></tr>
+						<tr>
+							<td>Reported cases:</td>
+							<td><input type="number" name="reportedCases" data-reported-cases /></td>
+						</tr>
+						<tr><td colspan="2" class="more-margin"><hr class="inner"></td></tr>
+						<tr>
+							<td>Total hospital beds:</td>
+							<td><input type="number" name="totalHospitalBeds" data-total-hospital-beds /></td>
+						</tr>
+						<tr><td colspan="2" class="more-margin"><hr class="inner"></td></tr>
+						<tr>
+							<td>Period type:</td>
+							<td>
+								<select name="periodType" id="periodType" data-period-type>
+									<option value="days">Days</option>
+									<option value="weeks">Weeks</option>
+									<option value="months">Months</option>
+								</select>
+							</td>
+						</tr>
+						<tr><td colspan="2" class="more-margin"><hr class="inner"></td></tr>
+						<tr>
+							<td colspan="2" class="center-align">
+								<input type="submit" name="update" id="submit" value="Submit" data-goestimate/>
+							</td>
+						</tr>
+					</table>
+				</fieldset>
+		</form>
+	</body>
+</html>
